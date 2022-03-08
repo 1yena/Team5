@@ -18,6 +18,16 @@
 		]]>
 	</select>
 	
+	<!-- 명소 상세 조회 -->
+	<select id="hotDetailList" resultType="com.bitc.team5.dto.HotDto">
+		<![CDATA[ 
+			SELECT
+				seq, place_name, place_location, place_explain, place_img_location, category_group_name
+			FROM
+				attration
+		]]>
+	</select>
+	
 	
 	<!-- 명소 등록 -->
 	<insert id="hotinsert" parameterType="com.bitc.team5.dto.HotDto" useGeneratedKeys="true" keyProperty="seq">

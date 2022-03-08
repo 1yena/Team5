@@ -25,4 +25,9 @@ public class HotServiceImpl implements HotService {
 		return hotMapper.selectHotList();
 	}
 
+	@Override
+	public List<HotDto> hotDetailList() throws Exception {
+		return hotMapper.hotDetailList();
+	}
+
 }

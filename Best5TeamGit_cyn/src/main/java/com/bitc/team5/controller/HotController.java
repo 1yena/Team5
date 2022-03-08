@@ -45,7 +45,17 @@ public class HotController {
 		
 			return "redirect:/hotplace";
 		}
-	
+		
+///////////////****************관광지 상세 페이지*****************///////////////////
+	@RequestMapping(value="/hotDetail")
+	public ModelAndView hotDetail() throws Exception {
+		ModelAndView mv = new ModelAndView("/hot/hotdetails");
+		
+		List<HotDto> hotDetail = hotService.hotDetailList();
+		mv.addObject("hotDetail", hotDetail);
+		
+		return mv;
+	}
 	
 
 }

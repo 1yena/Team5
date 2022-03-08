@@ -64,6 +64,8 @@ span.carousel-control-next-icon {
 		<!-- select문 시장 조회 부분 -->
 		<!-- <div class="container">
 			<div id="demo" class="carousel slide" data-ride="carousel">
+
+				The slideshow
 				<div class="carousel-inner no-padding my-5">
 					<div class="carousel-item active">
 						<div th:if="${#lists.size(hotList)} > 0" th:each="item : ${hotList}" class="col-xs-4 col-sm-3 col-md-4">
@@ -74,121 +76,74 @@ span.carousel-control-next-icon {
 							<p th:text="${item.placeLocation}" class="card-text text-center"></p>
 						</div>
 					</div>
-				</div>	
+				</div>
+				Left and right controls
+				<a class="carousel-control-prev" href="#demo" data-slide="prev">
+					<span class="carousel-control-prev-icon sp"></span>
+				</a>
+				<a class="carousel-control-next" href="#demo" data-slide="next">
+					<span class="carousel-control-next-icon sp"></span>
+				</a>
 			</div>
 		</div> -->
-		
-		
-<div class="container">
-  <div id="demo" class="carousel slide" data-ride="carousel">
-
-  <!-- The slideshow -->
-  <div class="carousel-inner no-padding my-5">
-	<div class="carousel-item active">
-		<div th:if="${#lists.size(hotList)} > 0" th:each="item : ${hotList}" class="col-xs-4 col-sm-3 col-md-4">
-			<a href="#" onclick=abc(this) class="slider_info"> 
-			<img th:src="@{${item.placeImgLocation}}" class="card-img-top" src="" style="height: 300px; width: 350px;">
-			</a>
-			<h5 th:text="${item.placeName}" class="card-text text-center"></h5>
-			<p th:text="${item.placeLocation}" class="card-text text-center"></p>
-		</div>
-    </div>
-</div>
-		<!-- Left and right controls -->
-		<a class="carousel-control-prev" href="#demo" data-slide="prev">
-			<span class="carousel-control-prev-icon sp"></span>
-		</a>
-		<a class="carousel-control-next" href="#demo" data-slide="next">
-			<span class="carousel-control-next-icon sp"></span>
-		</a>
-</div>
-</div>
-		
-		
-		
 
 
-<!-- <h1 class="mx-5">시장</h1>
+
+
+
+		<h1 class="mx-5">시장</h1>
 <div class="container">
   
   <div id="demo" class="carousel slide" data-ride="carousel">
-
-  The slideshow
   <div class="carousel-inner no-padding my-5">
     <div class="carousel-item active">
 		<div class="col-xs-4 col-sm-3 col-md-4">
 			<a href="#" onclick=abc(this) class="slider_info">
-				<img class="card-img-top" src="/img_5/sam1.jpg" style="height: 300px; width: 350px;">
+				<img class="" src="/img_5/gam.jpg" style="height: 300px; width: 350px;">
 			</a>
-			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
-			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
+			<p class="">감천 문화마을</p>
+			<small class="text-center">부산 사하구 감내2로 203</small>
 		</div>
 		<div class="col-xs-4 col-sm-3 col-md-4">
 			<a href="#" onclick=abc(this) class="slider_info">
-				<img class="card-img-top" src="/img_5/sam1.jpg" style="height: 300px; width: 350px;">
+				<img class="card-img-top" src="/img_5/jagal.jpg" style="height: 300px; width: 350px;">
 			</a>
-			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
-			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
+			<p class="">자갈치시장</p>
+			<small class="text-center">부산광역시 중구 남포동 4가</small>
 		</div>
 		<div class="col-xs-4 col-sm-3 col-md-4">
 			<a href="#" onclick=abc(this) class="slider_info">
-				<img class="card-img-top" src="/img_5/sam1.jpg" style="height: 300px; width: 350px;">
+				<img class="card-img-top" src="/img_5/gukje.jpg" style="height: 300px; width: 350px;">
 			</a>
-			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
-			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
+			<p class="">국제시장</p>
+			<small class="text-center">부산 중구 국제시장2길 38</small>
 		</div>
     </div>
-    <div class="carousel-item">
-	<div class="col-xs-4 col-sm-3 col-md-4">
+    
+    
+	<div class="carousel-item">
+		<div class="col-xs-4 col-sm-3 col-md-4">
 			<a href="#" onclick=abc(this) class="slider_info">
-				<img class="card-img-top" src="/img_5/sam1.jpg" style="height: 300px; width: 350px;">
+				<img class="card-img-top" src="/img_5/bou.jpg" style="height: 300px; width: 350px;">
 			</a>
-			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
-			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
+			<p class="">부전시장</p>
+			<small class="text-center">부산 부산진구 부전1동 중앙대로783번길 23</small>
 		</div>
 		<div class="col-xs-4 col-sm-3 col-md-4">
 			<a href="#" onclick=abc(this) class="slider_info">
-				<img class="card-img-top" src="/img_5/sam1.jpg" style="height: 300px; width: 350px;">
+				<img class="card-img-top" src="/img_5/gii.jpg" style="height: 300px; width: 350px;">
 			</a>
-			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
-			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
+			<p class="">기장시장</p>
+			<small class="text-center">부산 기장읍 읍내로104번길 16</small>
 		</div>
-		<div class="col-xs-4 col-sm-3 col-md-4">
-			<a href="#" onclick=abc(this) class="slider_info">
-				<img class="card-img-top" src="/img_5/sam1.jpg" style="height: 300px; width: 350px;">
-			</a>
-			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
-			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
-		</div>
-    </div>
-    <div class="carousel-item">
-		<div class="col-xs-4 col-sm-3 col-md-4">
-			<a href="#" onclick=abc(this) class="slider_info">
-				<img class="card-img-top" src="/img_5/sam1.jpg" style="height: 300px; width: 350px;">
-			</a>
-			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
-			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
-		</div>
-		<div class="col-xs-4 col-sm-3 col-md-4">
-			<a href="#" onclick=abc(this) class="slider_info">
-				<img class="card-img-top" src="/img_5/sam1.jpg" style="height: 300px; width: 350px;">
-			</a>
-			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
-			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
-		</div>
-		<div class="col-xs-4 col-sm-3 col-md-4">
-			<a href="#" onclick=abc(this) class="slider_info">
-				<img class="card-img-top" src="/img_5/sam1.jpg" style="height: 300px; width: 350px;">
-			</a>
-			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
-			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
-		</div>
+		
 	</div>
+
 	</div>
   
   
 
-		Left and right controls
+		<!-- Left and right controls -->
 		<a class="carousel-control-prev" href="#demo" data-slide="prev">
 			<span class="carousel-control-prev-icon sp"></span>
 		</a>
@@ -203,7 +158,6 @@ span.carousel-control-next-icon {
   
   <div id="demo1" class="carousel slide" data-ride="carousel">
 
-  The slideshow
   <div class="carousel-inner no-padding my-5">
     <div class="carousel-item active">
 		<div class="col-xs-4 col-sm-3 col-md-4">
@@ -278,7 +232,7 @@ span.carousel-control-next-icon {
   
   
 
-		Left and right controls
+		<!-- Left and right controls -->
 		<a class="carousel-control-prev" href="#demo1" data-slide="prev">
 			<span class="carousel-control-prev-icon sp"></span>
 		</a>
@@ -291,7 +245,7 @@ span.carousel-control-next-icon {
 
 
 
- -->
+
 
 
 

@@ -10,4 +10,6 @@ public interface HotService {
 
 	List<HotDto> selectHotList() throws Exception;
 
+	List<HotDto> hotDetailList() throws Exception;
+
 }
