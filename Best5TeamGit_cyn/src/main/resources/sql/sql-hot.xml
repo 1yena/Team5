@@ -13,6 +13,8 @@
 				seq, place_name, place_location, place_img_location
 			FROM
 				attration
+			WHERE
+				category_group_name = '시장';
 		]]>
 	</select>
 	
