@@ -19,15 +19,40 @@
 	
 		<div class="rounded p-5 my-3 bg-primary bg-opacity-25">
 			<h1 class="text-center">관광지 상세 페이지</h1>
-		</div>
-
+		</div>       	
+       	
+       	
 		<div class="container">
-			<div class="row mb-3">
-			
-				<div class="col-sm-6" th:if="${#lists.size(hotDetail)} > 0" th:each="item : ${hotDetail}">
-				
-					<!-- <img class="" src="/images/전연령1.jpg"> -->
-					
+			<div class="mb-3">
+				<div class="" th:if="${#lists.size(hotDetail)} > 0" th:each="item : ${hotDetail}">
+
+
+					<!-- 캐러셀 -->
+					<div id="div-carousel" class="carousel slide carousel-fade mb-4" data-bs-ride="carousel">
+						<div class="carousel-inner p-5 mt-1">
+							<div class="carousel-item active" data-bs-interval="2000">
+								<img src="@{${item.placeImgC1}}" alt="" class="w-100" style="height: 500px;">
+							</div>
+							<div class="carousel-item" data-bs-interval="2000">
+								<img src="@{${item.placeImgC2}}" alt="" class="w-100" style="height: 500px;">
+							</div>
+							<div class="carousel-item" data-bs-interval="2000">
+								<img src="@{${item.placeImgC3}}" alt="" class="w-100" style="height: 500px;">
+							</div>
+							<div class="carousel-item" data-bs-interval="2000">
+								<img src="@{${item.placeImgC4}}" alt="" class="w-100" style="height: 500px;">
+							</div>
+						</div>
+						<button class="carousel-control-prev" type="button" data-bs-target="#div-carousel" data-bs-slide="prev">
+							<span class="carousel-control-prev-icon"></span>
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#div-carousel" data-bs-slide="next">
+							<span class="carousel-control-next-icon"></span>
+						</button>
+					</div>
+
+
+					<!-- 관광지 설명 -->
 					<div class="my-3">
 						<label for="name" class="form-label text-warning">관광지명 </label>
 						<h2 th:text="${item.placeName}" id="name"></h2>
@@ -43,18 +68,15 @@
 						<h2 th:text="${item.placeExplain}" id="explain"></h2>
 					</div>
 					
-					
-					
-					<p th:text="${item.categoryGroupName}"></p>
-					<br>
+					<div class="my-3">
+						<label for="category" class="form-label text-warning">카테고리</label>
+						<h2 th:text="${item.categoryGroupName}" id="category"></h2>
+					</div>
 					
 					
 				</div>
-				
 			</div>
 		</div>
-
-
 
 	</main>
 	

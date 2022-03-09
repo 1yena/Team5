@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<style>
+.col-md-4 {
+	display: inline-block;
+	margin-left: -10px;
+}
+
+.col-md-4 img {
+	width: 100%;
+	height: 100%;
+}
+
+body .carousel-control-prev-icon, body .carousel-indicators li, body .carousel-control-next-icon
+	{
+	background-color: #000;
+}
+
+span.carousel-control-prev-icon {
+	position: relative;
+	bottom: 40px;
+	right: 40px;
+}
+
+span.carousel-control-next-icon {
+	position: relative;
+	bottom: 40px;
+}
+</style>
+
+<title>명소 리스트</title>
+</head>
+
+<body>
+	<header>
+		<div id="header" th:include="layout/header :: header"></div>
+	</header>
+	
+
+
+	<main style="margin-top: 10px;">
+		<h1 class="text-center my-5">부산의 관광 명소</h1>
+
+		<!-- select문 시장 조회 부분 -->
+		<div class="container">
+			<div id="demo" class="carousel slide" data-ride="carousel">
+			<h1 class="mx-5">시장</h1>
+			
+				<div class="carousel-inner no-padding my-5">
+					<div class="carousel-item active">
+						<div th:if="${#lists.size(hotList)} > 0" th:each="item : ${hotList}" class="col-xs-4 col-sm-3 col-md-4">
+<!-- 						<div th:if="${#lists.size(hotList)} > 0" th:each="item : ${hotList}" class="col-xs-4 col-sm-3 col-md-4"> -->
+							<a href="#" onclick=abc(this) class="slider_info"> 
+							<img th:src="@{${item.placeImgLocation}}" class="card-img-top" src="" style="height: 300px; width: 350px;">
+							</a>
+							<h5 th:text="${item.placeName}" class="card-text text-center"></h5>
+							<p th:text="${item.placeLocation}" class="card-text text-center"></p>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Left and right controls -->
+				<a class="carousel-control-prev" href="#demo" data-slide="prev">
+					<span class="carousel-control-prev-icon sp"></span>
+				</a>
+				<a class="carousel-control-next" href="#demo" data-slide="next">
+					<span class="carousel-control-next-icon sp"></span>
+				</a>
+				
+			</div>
+		</div>
+
+
+
+
+<!-- <h1 class="mx-5">시장</h1> -->
+<!-- 	<div class="container"> -->
+<!-- 	  <div id="demo" class="carousel slide" data-ride="carousel"> -->
+<!-- 		  <div class="carousel-inner no-padding my-5"> -->
+		  
+<!-- 		    <div class="carousel-item active"> -->
+<!-- 				<div class="col-xs-4 col-sm-3 col-md-4"> -->
+<!-- 					<a href="#" onclick=abc(this) class="slider_info"> -->
+<!-- 						<img class="" src="/img_5/market/gam.jpg" style="height: 300px; width: 350px;"> -->
+<!-- 					</a> -->
+<!-- 					<p class="">감천 문화마을</p> -->
+<!-- 					<small class="text-center">부산 사하구 감내2로 203</small> -->
+<!-- 				</div> -->
+<!-- 				<div class="col-xs-4 col-sm-3 col-md-4"> -->
+<!-- 					<a href="#" onclick=abc(this) class="slider_info"> -->
+<!-- 						<img class="card-img-top" src="/img_5/jagal.jpg" style="height: 300px; width: 350px;"> -->
+<!-- 					</a> -->
+<!-- 					<p class="">자갈치시장</p> -->
+<!-- 					<small class="text-center">부산광역시 중구 남포동 4가</small> -->
+<!-- 				</div> -->
+<!-- 				<div class="col-xs-4 col-sm-3 col-md-4"> -->
+<!-- 					<a href="#" onclick=abc(this) class="slider_info"> -->
+<!-- 						<img class="card-img-top" src="/img_5/gukje.jpg" style="height: 300px; width: 350px;"> -->
+<!-- 					</a> -->
+<!-- 					<p class="">국제시장</p> -->
+<!-- 					<small class="text-center">부산 중구 국제시장2길 38</small> -->
+<!-- 				</div> -->
+<!-- 		    </div> -->
+		    
+		    
+<!-- 				<div class="carousel-item"> -->
+<!-- 					<div class="col-xs-4 col-sm-3 col-md-4"> -->
+<!-- 						<a href="#" onclick=abc(this) class="slider_info"> -->
+<!-- 							<img class="card-img-top" src="/img_5/bou.jpg" style="height: 300px; width: 350px;"> -->
+<!-- 						</a> -->
+<!-- 						<p class="">부전시장</p> -->
+<!-- 						<small class="text-center">부산 부산진구 부전1동 중앙대로783번길 23</small> -->
+<!-- 					</div> -->
+<!-- 					<div class="col-xs-4 col-sm-3 col-md-4"> -->
+<!-- 						<a href="#" onclick=abc(this) class="slider_info"> -->
+<!-- 							<img class="card-img-top" src="/img_5/gii.jpg" style="height: 300px; width: 350px;"> -->
+<!-- 						</a> -->
+<!-- 						<p class="">기장시장</p> -->
+<!-- 						<small class="text-center">부산 기장읍 읍내로104번길 16</small> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+		
+<!-- 			</div> -->
+	  
+<!-- 			<!-- Left and right controls --> -->
+<!-- 			<a class="carousel-control-prev" href="#demo" data-slide="prev"> -->
+<!-- 				<span class="carousel-control-prev-icon sp"></span> -->
+<!-- 			</a> -->
+<!-- 			<a class="carousel-control-next" href="#demo" data-slide="next"> -->
+<!-- 				<span class="carousel-control-next-icon sp"></span> -->
+<!-- 			</a> -->
+<!-- 		</div> -->
+<!-- 	</div> -->
+
+
+<!-- 2번째 -->
+<!-- <h1 class="mx-5">시장</h1>
+<div class="container">
+  
+  <div id="demo1" class="carousel slide" data-ride="carousel">
+
+  <div class="carousel-inner no-padding my-5">
+    <div class="carousel-item active">
+		<div class="col-xs-4 col-sm-3 col-md-4">
+			<a href="#" onclick=abc(this) class="slider_info">
+				<img class="card-img-top" src="/img_5/sam1.jpg" style="height: 300px; width: 350px;">
+			</a>
+			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
+			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
+		</div>
+		<div class="col-xs-4 col-sm-3 col-md-4">
+			<a href="#" onclick=abc(this) class="slider_info">
+				<img class="card-img-top" src="/img_5/sam1.jpg" style="height: 300px; width: 350px;">
+			</a>
+			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
+			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
+		</div>
+		<div class="col-xs-4 col-sm-3 col-md-4">
+			<a href="#" onclick=abc(this) class="slider_info">
+				<img class="card-img-top" src="/img_5/sam1.jpg" style="height: 300px; width: 350px;">
+			</a>
+			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
+			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
+		</div>
+    </div>
+    <div class="carousel-item">
+	<div class="col-xs-4 col-sm-3 col-md-4">
+			<a href="#" onclick=abc(this) class="slider_info">
+				<img class="card-img-top" src="/img_5/sam1.jpg" style="height: 300px; width: 350px;">
+			</a>
+			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
+			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
+		</div>
+		<div class="col-xs-4 col-sm-3 col-md-4">
+			<a href="#" onclick=abc(this) class="slider_info">
+				<img class="card-img-top" src="/img_5/sam1.jpg" style="height: 300px; width: 350px;">
+			</a>
+			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
+			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
+		</div>
+		<div class="col-xs-4 col-sm-3 col-md-4">
+			<a href="#" onclick=abc(this) class="slider_info">
+				<img class="card-img-top" src="/img_5/sam1.jpg" style="height: 300px; width: 350px;">
+			</a>
+			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
+			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
+		</div>
+    </div>
+    <div class="carousel-item">
+		<div class="col-xs-4 col-sm-3 col-md-4">
+			<a href="#" onclick=abc(this) class="slider_info">
+				<img class="card-img-top" src="/img_5/sam1.jpg" style="height: 300px; width: 350px;">
+			</a>
+			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
+			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
+		</div>
+		<div class="col-xs-4 col-sm-3 col-md-4">
+			<a href="#" onclick=abc(this) class="slider_info">
+				<img class="card-img-top" src="/img_5/sam1.jpg" style="height: 300px; width: 350px;">
+			</a>
+			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
+			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
+		</div>
+		<div class="col-xs-4 col-sm-3 col-md-4">
+			<a href="#" onclick=abc(this) class="slider_info">
+				<img class="card-img-top" src="/img_5/sam1.jpg" style="height: 300px; width: 350px;">
+			</a>
+			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
+			<p class="text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
+		</div>
+	</div>
+	</div>
+  
+  
+
+		Left and right controls
+		<a class="carousel-control-prev" href="#demo1" data-slide="prev">
+			<span class="carousel-control-prev-icon sp"></span>
+		</a>
+		<a class="carousel-control-next" href="#demo1" data-slide="next">
+			<span class="carousel-control-next-icon sp"></span>
+		</a>
+</div>
+</div> -->
+
+
+
+
+
+
+
+	<!-- 버튼 -->
+	<div class="d-flex justify-content-end m-5">
+		<a href="/hotinsert" class="btn btn-primary">등록</a>
+	</div>
+				
+				
+				
+	</main>
+	
+<!-- 	<footer></footer>	 -->
+
+
+</body>
+</html>

@@ -11,5 +11,9 @@ public class HotDto {
 	private String placeExplain;
 	private String placeImgLocation;
 	private String categoryGroupName;
+	private String placeImgC1;
+	private String placeImgC2;
+	private String placeImgC3;
+	private String placeImgC4;
 
 }
