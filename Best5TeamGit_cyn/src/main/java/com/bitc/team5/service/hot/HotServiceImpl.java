@@ -24,10 +24,44 @@ public class HotServiceImpl implements HotService {
 	public List<HotDto> selectHotList() throws Exception {
 		return hotMapper.selectHotList();
 	}
+	@Override
+	public List<HotDto> selectMarketList() throws Exception {
+		return hotMapper.selectMarketList();
+	}
+	@Override
+	public List<HotDto> selectLandList() throws Exception {
+		return hotMapper.selectLandList();
+	}
+	@Override
+	public List<HotDto> selectParkList() throws Exception {
+		return hotMapper.selectParkList();
+	}
+	@Override
+	public List<HotDto> selectWalkList() throws Exception {
+		return hotMapper.selectWalkList();
+	}
 
 	@Override
-	public List<HotDto> hotDetailList() throws Exception {
-		return hotMapper.hotDetailList();
+	public HotDto hotDetailList(int seq) throws Exception {
+		return hotMapper.hotDetailList(seq);
 	}
+
+	@Override
+	public void hotUpdateBoard(HotDto hotupdate) throws Exception {
+		hotMapper.hotUpdateBoard(hotupdate);
+		
+	}
+
+	
+
+	
+
+	
+
+	
+	
+	
+
+	
 
 }

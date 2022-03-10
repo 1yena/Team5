@@ -8,6 +8,24 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
+<script>
+//	버튼 클릭 이벤트 (누르면 공지사항으로 돌아가기, 글 수정, 글 삭제)
+	$(document).ready(function() {
+		var seq = $("#seq").val();
+	
+	
+	
+	$("#btn-edit").on("click", function() {
+		$("#method").val("PUT");
+		var frm = $("#frm")[0];
+		frm.action = "/hotupdate/" + seq;
+		frm.submit();
+	});
+	});
+	
+	
+</script>
+
 </head>
 <body>
 
@@ -22,25 +40,26 @@
 		</div>       	
        	
        	
-		<div class="container">
+		<div class="container" style="margin-bottom: 350px;">
 			<div class="mb-3">
+				<form id="frm" method="POST">
 				<div class="" th:if="${#lists.size(hotDetail)} > 0" th:each="item : ${hotDetail}">
 
 
 					<!-- 캐러셀 -->
-					<div id="div-carousel" class="carousel slide carousel-fade mb-4" data-bs-ride="carousel">
+					<div id="div-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
 						<div class="carousel-inner p-5 mt-1">
-							<div class="carousel-item active" data-bs-interval="2000">
-								<img src="@{${item.placeImgC1}}" alt="" class="w-100" style="height: 500px;">
+							<div class="carousel-item active" data-interval="false">
+								<img th:src="${item.placeImgC1}" alt="" class="w-100" style="height: 650px;">
 							</div>
-							<div class="carousel-item" data-bs-interval="2000">
-								<img src="@{${item.placeImgC2}}" alt="" class="w-100" style="height: 500px;">
+							<div class="carousel-item" data-interval="false">
+								<img th:src="@{${item.placeImgC2}}" alt="" class="w-100" style="height: 650px;">
 							</div>
-							<div class="carousel-item" data-bs-interval="2000">
-								<img src="@{${item.placeImgC3}}" alt="" class="w-100" style="height: 500px;">
+							<div class="carousel-item" data-interval="false">
+								<img th:src="@{${item.placeImgC3}}" alt="" class="w-100" style="height: 650px;">
 							</div>
-							<div class="carousel-item" data-bs-interval="2000">
-								<img src="@{${item.placeImgC4}}" alt="" class="w-100" style="height: 500px;">
+							<div class="carousel-item" data-interval="false">
+								<img th:src="@{${item.placeImgC4}}" alt="" class="w-100" style="height: 650px;">
 							</div>
 						</div>
 						<button class="carousel-control-prev" type="button" data-bs-target="#div-carousel" data-bs-slide="prev">
@@ -53,28 +72,38 @@
 
 
 					<!-- 관광지 설명 -->
+					<div>
+						<input type="hidden" id="seq" name="seq" value="1" th:value="${hotDetail.seq}">
+						<input type="hidden" id="method" name="_method" value="put">
+					</div>
 					<div class="my-3">
 						<label for="name" class="form-label text-warning">관광지명 </label>
-						<h2 th:text="${item.placeName}" id="name"></h2>
+						<h2 th:text="${item.placeName}" class="m-2" id="name"></h2>
 					</div>
-					
+					<br>
 					<div class="my-3">
 						<label for="location" class="form-label text-warning">위치</label>
-						<h2 th:text="${item.placeLocation}" id="location"></h2>
+						<h2 th:text="${item.placeLocation}" class="m-2" id="location"></h2>
 					</div>
-					
+					<br>
 					<div class="my-3">
 						<label for="explain" class="form-label text-warning">소개글</label>
-						<h2 th:text="${item.placeExplain}" id="explain"></h2>
+						<h3 th:text="${item.placeExplain}" class="m-2" id="explain"></h3>
 					</div>
-					
+					<br>
 					<div class="my-3">
 						<label for="category" class="form-label text-warning">카테고리</label>
-						<h2 th:text="${item.categoryGroupName}" id="category"></h2>
+						<h3 th:text="${item.categoryGroupName}" class="m-2" id="category"></h3>
 					</div>
 					
 					
+					<div class="d-flex justify-content-end m-5">
+						<button id ="btn-edit" class="btn btn-primary me-3 mt-5">수정</button>
+					</div>
 				</div>
+				</form>
+				
+					
 			</div>
 		</div>
 
