@@ -6,6 +6,7 @@ import lombok.Data;
 public class HotDto {
 	
 	private int seq;
+	private String placeId;
 	private String placeName;
 	private String placeLocation;
 	private String placeExplain;
