@@ -7,7 +7,7 @@
 <mapper namespace="com.bitc.team5.mapper.HotMapper">
 
 	<!-- 명소 조회 -->
-	<!-- 시장 -->
+	<!-- 전체 -->
 	<select id="selectHotList" resultType="com.bitc.team5.dto.HotDto">
 		<![CDATA[ 
 			SELECT
@@ -16,6 +16,7 @@
 				attration
 		]]>
 	</select>
+	<!-- 시장 -->
 	<select id="selectMarketList" resultType="com.bitc.team5.dto.HotDto">
 		<![CDATA[ 
 			SELECT
@@ -84,6 +85,8 @@
 				#{placeImgC1}, #{placeImgC2}, #{placeImgC3}, #{placeImgC4})
 		]]>
 	</insert>
+	
+	
 	<!-- 명소 수정 -->
 	<update id="hotUpdateBoard" parameterType="com.bitc.team5.dto.HotDto">
 		<![CDATA[ 
@@ -95,7 +98,6 @@
 				place_img_c1 = #{placeImgC1}, place_img_c2 = #{placeImgC2}, place_img_c3 = #{placeImgC3}, place_img_c4 = #{placeImgC4}
 			where 
 				seq = #{seq}
-				
 		]]>
 	</update>
 
