@@ -17,7 +17,6 @@ public class HotServiceImpl implements HotService {
 	@Override
 	public void hotinsert(HotDto hotPlace) throws Exception {
 		hotMapper.hotinsert(hotPlace);
-		
 	}
 
 	@Override
