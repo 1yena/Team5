@@ -4,8 +4,11 @@ import lombok.Data;
 
 @Data
 public class UserDto {
+	
 	private int seq;
 	private String email;
 	private String password;
 	private int phone;
+	private String userName;
+
 }
