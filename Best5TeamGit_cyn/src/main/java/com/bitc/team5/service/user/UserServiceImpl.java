@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.bitc.team5.dto.DibDto;
 import com.bitc.team5.dto.UserDto;
 import com.bitc.team5.mapper.UserMapper;
 
@@ -32,9 +33,9 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public UserDto selectUserDetail(int seq) throws Exception {
+	public UserDto selectUserDetail(String email) throws Exception {
 		// TODO Auto-generated method stub
-		return userMapper.selectUserDetail(seq);
+		return userMapper.selectUserDetail(email);
 	}
 
 	@Override
@@ -47,6 +48,18 @@ public class UserServiceImpl implements UserService {
 	public void userDelete(UserDto user) throws Exception {
 		// TODO Auto-generated method stub
 		userMapper.userDelete(user);
+	}
+
+	@Override
+	public UserDto selectUserDetail2(String email) throws Exception {
+		// TODO Auto-generated method stub
+		return userMapper.selectUserDetail2(email);
+	}
+
+	@Override
+	public List<DibDto> dibList(String email) throws Exception {
+		
+		return userMapper.dibList(email);
 	}
 
 	
